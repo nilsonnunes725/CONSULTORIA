@@ -92,6 +92,9 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+        <li class="nav-item">
+           <a class="nav-link" href="#portfolio">Portfólio</a>
+        </li>
         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
         <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
       </ul>
@@ -131,6 +134,10 @@
     </div>
   </div>
 </section>
+
+
+
+
 
 <!-- SERVIÇOS -->
 <section id="servicos" class="py-1 serviços">
@@ -183,6 +190,81 @@
     </div>
   </div>
 </section>
+
+
+<!-- PORTFÓLIO -->
+<section id="portfolio" class="py-5 bg-dark text-white">
+  <div class="container">
+
+    <h2 class="text-center mb-5 fw-bold">
+      Portfólio
+    </h2>
+
+    <div id="portfolioSlide" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#portfolioSlide" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#portfolioSlide" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#portfolioSlide" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner rounded shadow">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="portfolio1.jpg" class="d-block w-100" style="height:500px; object-fit:cover;">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Veículo Média Monta</h5>
+            <p>
+              Recuperação estrutural e aprovação em vistoria técnica.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="portfolio2.jpg" class="d-block w-100" style="height:500px; object-fit:cover;">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Reclassificação Concluída</h5>
+            <p>
+              Processo técnico para regularização documental.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="portfolio3.jpg" class="d-block w-100" style="height:500px; object-fit:cover;">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Grande Monta</h5>
+            <p>
+              Análise técnica e recuperação veicular especializada.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Botões -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#portfolioSlide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#portfolioSlide" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
 
 <!-- SOBRE -->
 <section id="sobre" class="bg-light py-5">
