@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+    body{
+      background:#f5f5f5;
+    }
+
+    .admin-box{
+      max-width:700px;
+      margin:auto;
+      margin-top:80px;
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .preview img{
+      width:100%;
+      border-radius:10px;
+      margin-top:20px;
+      object-fit:cover;
+      max-height:400px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="admin-box">
+
+    <h2 class="text-center mb-4 fw-bold">
+      Painel Administrativo
+    </h2>
+
+    <form id="portfolioForm">
+
+      <!-- FOTO -->
+      <div class="mb-3">
+        <label class="form-label">Foto do Veículo</label>
+
+        <input 
+          type="file"
+          class="form-control"
+          id="imagem"
+          accept="image/*"
+          required
+        >
+      </div>
+
+      <!-- TITULO -->
+      <div class="mb-3">
+        <label class="form-label">Título</label>
+
+        <input 
+          type="text"
+          class="form-control"
+          id="titulo"
+          placeholder="Ex: Corolla Média Monta"
+          required
+        >
+      </div>
+
+      <!-- DESCRIÇÃO -->
+      <div class="mb-3">
+        <label class="form-label">Descrição</label>
+
+        <textarea 
+          class="form-control"
+          id="descricao"
+          rows="4"
+          placeholder="Descreva o serviço realizado..."
+          required
+        ></textarea>
+      </div>
+
+      <!-- BOTÃO -->
+      <button class="btn btn-primary w-100">
+        Publicar Projeto
+      </button>
+
+    </form>
+
+    <!-- PREVIEW -->
+    <div class="preview text-center">
+      <img id="previewImg" style="display:none;">
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+  // PREVIEW DA IMAGEM
+
+  const imagemInput = document.getElementById('imagem');
+  const previewImg = document.getElementById('previewImg');
+
+  imagemInput.addEventListener('change', function(){
+
+    const arquivo = this.files[0];
+
+    if(arquivo){
+
+      const reader = new FileReader();
+
+      reader.onload = function(e){
+
+        previewImg.src = e.target.result;
+        previewImg.style.display = 'block';
+
+      }
+
+      reader.readAsDataURL(arquivo);
+
+    }
+
+  });
+
+  // ENVIO
+
+  document
+    .getElementById('portfolioForm')
+    .addEventListener('submit', function(e){
+
+      e.preventDefault();
+
+      alert('Projeto enviado com sucesso!');
+
+    });
+
+</script>
+
+</body>
+</html>
