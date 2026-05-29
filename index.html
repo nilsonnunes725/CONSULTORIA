@@ -8,7 +8,8 @@
   <style>
     body { scroll-behavior: smooth; }
     .hero {
-      height: 100vh;
+      min-height: 100vh;
+      position: relative;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('veiculo.png');
       background-size: cover;
       background-position: center;
@@ -30,7 +31,8 @@
       transition: 0.3s;
     }
     .card-profile {
-      margin-top: -25vh;
+      margin-top: -120px;
+
       border-radius: 20px;
       backdrop-filter: blur(10px);
       background: rgba(255,255,255,0.15);
@@ -40,7 +42,7 @@
       animation: fadeUp 1s ease forwards;
       opacity: 0;
       color:rgb(0, 0, 0);
-      z-index: 10;
+      z-index: 20;
       
 
       
@@ -81,21 +83,52 @@
 </head>
 <body>
 
+
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">JP ENGENHARIA</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+    
+    <!-- Logo -->
+    <a class="navbar-brand" href="#home">JP ENGENHARIA</a>
+
+    <!-- Botão Mobile -->
+    <button 
+      class="navbar-toggler" 
+      type="button"
+      data-bs-toggle="collapse" 
+      data-bs-target="#menu"
+      aria-controls="menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Menu -->
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Início</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#servicos">Serviços</a>
+        </li>
+
+        <li class="nav-item">
+           <a class="nav-link" href="#portfolio">Portfólio</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#sobre">Sobre</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contato">Contato</a>
+        </li>
       </ul>
     </div>
+
   </div>
 </nav>
 
@@ -184,6 +217,81 @@
   </div>
 </section>
 
+
+<!-- PORTFÓLIO -->
+<section id="portfolio" class="py-5 bg-dark text-white">
+  <div class="container">
+
+    <h2 class="text-center mb-5 fw-bold">
+      Portfólio
+    </h2>
+
+    <div id="portfolioSlide" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#portfolioSlide" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#portfolioSlide" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#portfolioSlide" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner rounded shadow">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="portfolio1.jpg" class="d-block w-100" style="height:500px; object-fit:cover;">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Veículo Média Monta</h5>
+            <p>
+              Recuperação estrutural e aprovação em vistoria técnica.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="portfolio2.jpg" class="d-block w-100" style="height:500px; object-fit:cover;">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Reclassificação Concluída</h5>
+            <p>
+              Processo técnico para regularização documental.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="portfolio3.jpg" class="d-block w-100" style="height:500px; object-fit:cover;">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Grande Monta</h5>
+            <p>
+              Análise técnica e recuperação veicular especializada.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Botões -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#portfolioSlide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#portfolioSlide" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+
 <!-- SOBRE -->
 <section id="sobre" class="bg-light py-5">
   <div class="container">
@@ -233,10 +341,17 @@
 <!-- CONTATO -->
 <section id="contato" class="py-5">
   <div class="container">
+    
+    <div class="text-center fw-bold">
+    <h4>"Nem todo veículo classificado como média ou grande monta está corretamente enquadrado. 
+      Uma análise técnica pode mudar completamente esse cenário."</h>
+    
+      <h5>Fale comigo agora e descubra se seu veículo pode ser reclassificado</h5> </>
+    
     <h2 class="text-center mb-4">Contato</h2>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form action="https://formspree.io/f/xwvwoqyz" method="POST">
+        <form action="https://formspree.io/f/mojpwajj" method="POST">
 
         <input type="text" name="nome" class="form-control mb-3" placeholder="Nome" required>
 
@@ -258,7 +373,7 @@
         </button>
 
         <!-- Botão WhatsApp -->
-        <a href="https://wa.me/+5531971614959" class="btn btn-success w-100 mt-3">
+        <a href="https://wa.me/+5531988450791" class="btn btn-success w-100 mt-3">
         Falar no WhatsApp
         </a>
 
@@ -270,7 +385,7 @@
 
 <!-- FOOTER -->
 <footer class="bg-dark text-white text-center p-3">
-  <p>© 2026 JOSE PAULO ALMEIDA | Engenharia de Monta Veicular</p>
+  <p>© 2026 Consultor Veicular</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
